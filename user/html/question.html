@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/question.css">
+</head>
+<body>
+    <header>
+        <h1>PTIT QUIZZ</h1>
+    </header>
+
+    <nav>
+        <button onclick="goHome()">Home</button>
+        <button onclick="logout()">Đăng xuất</button>
+    </nav>
+    <div class="exam-container">
+        <div id="examInfo"></div>
+        <div id="questions">
+            <div id="timer">Thời gian còn lại: <span id="countdown"></span></div>
+        </div>
+        
+        <button id="submit-btn" onclick="submitExam()">Nộp bài</button>
+    </div>
+    <script src="../javascripts/question.js"></script>
+</body>
+</html>

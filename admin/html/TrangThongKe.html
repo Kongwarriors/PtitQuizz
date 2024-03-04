@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê</title>
+    <link rel="stylesheet" href="../css/ThongKe.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="head">
+          <div class="left_area">
+            <a href="/DashBoard/TrangDashBoard.html">PTIT QUIZ</a>
+          </div>
+          <div class="right_area">
+            <a href="/logout" class="logout_btn">Đăng xuất</a>
+          </div>
+        </div>
+      </header>
+    <div class="container">
+        <h1>Thống kê Kết quả thi Sinh viên</h1>
+        <div class="filters">
+            <label for="examType">Loại kỳ thi:</label>
+            <select id="examType">
+                <option value="all">Tất cả</option>
+                <option value="practice">Luyện tập</option>
+                <option value="midterm">Giữa kỳ</option>
+                <option value="final">Cuối kỳ</option>
+            </select>
+
+            <label for="accessType">Trạng thái truy cập:</label>
+            <select id="accessType">
+                <option value="all">Tất cả</option>
+                <option value="free">Tự do</option>
+                <option value="specificTime">Thời gian cụ thể</option>
+            </select>
+
+            <label for="date">Ngày:</label>
+            <input type="date" id="date">
+
+            <button id="applyFilters">Áp dụng Bộ lọc</button>
+        </div>
+
+        <div class="export-buttons">
+            <button id="exportExcel">Xuất Excel</button>
+        </div>
+
+        <table id="statistics">
+            <thead>
+                <tr>
+                    <th>STT</th> <!-- Số thứ tự(STT) -->
+                    <th>Họ và tên</th>
+                    <th>Mã sinh viên</th>
+                    <th>Loại kỳ thi</th> <!-- Thêm cột Loại kỳ thi -->
+                    <th>Trạng thái truy cập</th> <!-- Thêm cột Trạng thái truy cập -->
+                    <th>Ngày thi</th> <!-- Thêm cột Ngày thi -->
+                    <th>Tổng số lần tham gia</th>
+                    <th>Tỉ lệ hoàn thành (%)</th>
+                    <th>Điểm trung bình</th>
+                </tr>
+            </thead>
+            <tbody id="statsBody"></tbody>
+        </table>
+        <!-- Thẻ canvas để vẽ biểu đồ -->
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+    <script src="../javascripts/ThongKe.js"></script>
+</body>
+</html>

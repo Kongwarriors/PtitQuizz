@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/DashBoard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header>
+    <label for="check">
+      <i style="left: 200px;margin-top: 5px;"class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3>PTIT Quizz</h3>
+    </div>
+    <div class="right_area">
+      <a href="/logout" class="logout_btn">Đăng xuất</a>
+    </div>
+  </header>
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar">
+    <a href="TrangDashBoard.html"><i class="fas fa-tachometer-alt"></i><span>DashBoard</span></a>
+    <a href="/TaoKyThi/TrangTaoChinhSuaKyThi.html"><i class="fas fa-tachometer-alt"></i><span>Tạo sửa câu hỏi</span></a>
+    <a href="/KetQua/index.html"><i class="fas fa-book"></i><span>Thống kê</span></a>
+    <a href="/test_8/index.html"><i class="fas fa-question-circle"></i><span>Kết quả thi</span></a>
+  </div>
+  <!--sidebar end-->
+
+
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br><br>
+    <!-- {% block content %}
+
+    {% endblock content %} -->
+    <br><br><br>
+    <!-- {% include "quiz/footer.html" %} -->
+  </div>
+  <!--content end-->
+</body>
+
+</html>

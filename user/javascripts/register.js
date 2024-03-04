@@ -12,11 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         //Kiểm tra thông tin tài khoản hợp lệ
-        if(username === "admin"){
+        if(username === "user"){
             errorMessage.textContent = "Account already exists";
             return;
         }
-
         // Kiểm tra xem mật khẩu và mật khẩu nhập lại có khớp nhau không
         else if (password !== rePassword) {
             errorMessage.textContent = 'Passwords do not match.';
