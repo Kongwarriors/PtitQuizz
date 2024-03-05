@@ -21,3 +21,13 @@ function viewResultDetails() {
     // Hiển thị kết quả chi tiết trong div
     answerDetailsDiv.innerHTML = detailHTML;
   }
+
+  function logout() {
+    window.location.href = "../html/login.html";
+    // Add your code to perform logout action
+  }
+
+  function goHome() {
+    window.location.href = "../html/login.html";
+    // Add your code to navigate to the home page
+  }
