@@ -84,7 +84,7 @@ const exams = [
 
   // Function to navigate to home
   function goHome() {
-    alert("Go to home page!");
+    window.location.href = "../html/home.html";
     // Add your code to navigate to the home page
   }
 

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // Sau khi đăng ký thành công, bạn có thể chuyển hướng người dùng đến trang dashboard hoặc trang khác
         else{
-            window.location.href = 'https://www.google.com';
+            window.location.href = 'login.html';
         }
     });
 });

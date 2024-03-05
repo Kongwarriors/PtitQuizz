@@ -91,6 +91,6 @@ window.onload = function() {
   }
 
   function goHome() {
-    window.location.href = "../html/login.html";
+    window.location.href = "../html/home.html";
     // Add your code to navigate to the home page
   }
