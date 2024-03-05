@@ -10,7 +10,7 @@ loginForm.addEventListener('submit', function(event) {
     // Kiểm tra thông tin đăng nhập
     if (username === 'admin' && password === 'password') {
         // Đăng nhập thành công
-        window.location.href = "home.html"; // Chuyển hướng đến trang dashboard
+        window.location.href = "TrangDashBoard.html"; // Chuyển hướng đến trang dashboard
     } else {
         // Hiển thị thông báo lỗi
         errorMessage.textContent = 'Invalid username or password. Please try again.';
