@@ -1,5 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+#student-list {
+    margin-top: 20px;
+}
+
+/* Style individual student items */
+.student-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style controls div */
+#controls {
+    margin-top: 20px;
+}
 body{
-  background-color: #F3F7F9;
+    background-color: #F3F7F9;
 }
 a:link {
     text-decoration: none;
@@ -8,13 +49,15 @@ a:link {
   body {
     margin: 0;
     padding: 0;
+    font-size: 17px;
     font-family: "Gill Sans", sans-serif;;
   }
 
   header {
     position: fixed;
     background: #AD171C;
-    padding: 20px;
+    height: 70px;
+    padding: 7px;
     width: 100%;
     z-index: 1;
   }
@@ -22,6 +65,9 @@ a:link {
   .left_area h3 {
     color: #fff;
     margin: 0px;
+    margin-top: -5.25px;
+    /* margin-bottom: 100px; */
+    /* padding-bottom: 25px; */
     margin-left: 19px;
     text-transform: uppercase;
     font-size: 22px;
@@ -142,11 +188,44 @@ a:link {
   #check {
     display: none;
   }
-  #img1{
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    max-width: 100%; /* Phóng to hình ảnh mà không bị vượt quá kích thước ban đầu */
-    max-height: 100%; /
-  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

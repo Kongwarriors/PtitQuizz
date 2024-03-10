@@ -36,7 +36,9 @@ function removeQuestion(button) {
     var li = button.parentElement;
     li.parentElement.removeChild(li);
 }
-
+function goBack(){
+    window.location.href = "/PtitQuizz-main/admin/html/QuanLyKyThi.html"
+}
 function importFromExcel() {
     var input = document.createElement('input');
     input.type = 'file';
