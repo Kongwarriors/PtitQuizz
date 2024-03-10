@@ -25,7 +25,7 @@ let users = [
     });
   }
 function changeQ() {
-    window.location.href="/PtitQuizz-main/admin/html/TrangTaoChinhSuaKyThi.html"
+    window.location.href="/PtitQuizz/admin/html/TrangTaoChinhSuaKyThi.html"
 }
   function editUser(userId) {
     let user = users.find(u => u.id === userId);
