@@ -1,2 +1,1 @@
-https:/phungmhieu/PtitQuizz/user/html/login.html
-
+https://phungmhieu.github.io/PtitQuizz/user/html/login.html
