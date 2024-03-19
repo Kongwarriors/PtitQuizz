@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td>${studentCount}</td>
                 <td>${student.name}</td>
                 <td>${student.studentID}</td>
-                <td>${student.examType}</td>
-                <td>${student.accessType}</td>
+                <td>${translateExamType(student.examType)}</td> <!-- Thay đổi thành tiếng Việt -->
+                <td>${translateAccessType(student.accessType)}</td> <!-- Thay đổi thành tiếng Việt -->
                 <td>${student.date}</td>
                 <td>${student.participation}</td>
                 <td>${calculateCompletionRate(student.averageScore)}</td>
@@ -86,7 +86,34 @@ document.addEventListener("DOMContentLoaded", function() {
             // Tăng biến đếm
             studentCount++;
         });
-    }    
+    }
+    
+    // Hàm chuyển đổi loại kỳ thi sang tiếng Việt
+    function translateExamType(examType) {
+        switch (examType) {
+            case "practice":
+                return "Luyện tập";
+            case "midterm":
+                return "Giữa kỳ";
+            case "final":
+                return "Cuối kỳ";
+            default:
+                return "Không xác định";
+        }
+    }
+    
+    // Hàm chuyển đổi trạng thái truy cập sang tiếng Việt
+    function translateAccessType(accessType) {
+        switch (accessType) {
+            case "free":
+                return "Tự do";
+            case "specificTime":
+                return "Thời gian cụ thể";
+            default:
+                return "Không xác định";
+        }
+    }
+        
 
     function calculateCompletionRate(averageScore) {
         const maxScore = 10.0;
@@ -97,24 +124,35 @@ document.addEventListener("DOMContentLoaded", function() {
     function drawHistogram() {
         const canvas = document.getElementById('myChart');
         const ctx = canvas.getContext('2d');
-
-        // Tạo mảng chứa tần suất của từng điểm số
-        const frequency = Array.from({ length: 11 }, () => 0);
-
-        // Tính toán tần suất của từng điểm số
-        studentsData.forEach(student => {
-            const score = Math.round(student.averageScore); // Làm tròn điểm trung bình thành số nguyên
-            frequency[score]++;
+    
+        // Tạo mảng chứa tần suất của từng điểm số trung bình
+        const scoreFrequency = Array.from({ length: 11 }, () => 0);
+    
+        // Lấy dữ liệu từ bảng thống kê đã được lọc
+        const statsTableBody = document.getElementById("statsBody");
+        const rows = statsTableBody.querySelectorAll("tr");
+    
+        rows.forEach(row => {
+            // Lấy điểm trung bình từ cột cuối cùng của mỗi hàng
+            const averageScore = parseFloat(row.cells[8].textContent);
+            const score = Math.round(averageScore); // Làm tròn điểm trung bình thành số nguyên
+            scoreFrequency[score]++;
         });
-
+    
+        // Kiểm tra xem biểu đồ đã tồn tại chưa
+        if (window.myChart instanceof Chart) {
+            // Nếu đã tồn tại, hủy biểu đồ cũ trước khi vẽ lại
+            window.myChart.destroy();
+        }
+    
         // Vẽ biểu đồ histogram
-        myChart = new Chart(ctx, {
+        window.myChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: Array.from({ length: 11 }, (_, i) => i), // Nhãn trục x từ 0 đến 10
                 datasets: [{
                     label: 'Tần suất',
-                    data: frequency,
+                    data: scoreFrequency,
                     backgroundColor: 'rgba(54, 162, 235, 0.5)', // Màu nền của cột
                     borderColor: 'rgba(54, 162, 235, 1)', // Màu viền của cột
                     borderWidth: 1
@@ -132,14 +170,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     x: {
                         title: {
                             display: true,
-                            text: 'Điểm số'
+                            text: 'Điểm số trung bình'
                         }
                     }
                 }
             }
         });
-    }    
-    
+    }
+                        
     // Xuất danh sách thành tệp Excel
     function exportExcel() {
         const table = document.getElementById("statistics");
